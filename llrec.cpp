@@ -14,25 +14,29 @@ void llhelper( Node *&head, Node *&smaller, Node *&larger, int pivot){
     if (head == nullptr){
         return;
       }
-    
+      
+      
       if (head -> val <= pivot){
+        
         smaller = head;
         head = head->next;
         smaller->next = nullptr;
-    
         llhelper(head, smaller->next, larger, pivot);
+        
     
     
       }
     
       else{
+        
         larger = head;
         head = head->next;
         larger->next = nullptr;
-    
         llhelper(head, smaller, larger->next, pivot);
+        
       }
-    
+      
+    head = nullptr;
 
 
 }
